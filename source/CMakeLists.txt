@@ -17,4 +17,3 @@ add_library( vtkPoissonReconstruction
 target_link_libraries( vtkPoissonReconstruction
   ${VTK_LIBRARIES}
 )
-

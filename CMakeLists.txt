@@ -1,9 +1,19 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8)
 
 project(PoissonReconstruction)
 
-find_package(VTK REQUIRED)
-include(${VTK_USE_FILE})
+set(CMAKE_MACOSX_RPATH 1)
+
+if (Fetch_PoissonReconstruction OR Module_PoissonReconstruction)
+  message(STATUS "PoissonReconstruction: Building PoissonReconstruction as a Remote Module")
+  set(EXECUTABLE_OUTPUT_PATH ${ITK_BINARY_DIR})
+  set(PoissonReconstruction_BINARY_DIR ${EXECUTABLE_OUTPUT_PATH})
+  itk_module_impl()
+else()
+  FIND_PACKAGE(VTK REQUIRED)
+  INCLUDE(${VTK_USE_FILE})
+  message(STATUS "PoissonReconstruction: Building PoissonReconstruction stand-alone")
+endif()
 
 if( ${VTK_BUILD_SHARED_LIBS} MATCHES ON )
   set( SHARED_LIBS "SHARED" )

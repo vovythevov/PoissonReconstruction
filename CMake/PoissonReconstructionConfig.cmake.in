@@ -1,0 +1,6 @@
+
+
+# --------------------------------------------------------------------------
+if(EXISTS "@Poisson_TARGET_FILE@" AND NOT TARGET vtkPoissonReconstruction)
+  include("@Poisson_TARGET_FILE@")
+endif()

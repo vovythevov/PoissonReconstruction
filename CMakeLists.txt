@@ -75,3 +75,12 @@ if( BUILD_DOCUMENTATION )
   add_subdirectory( documentation )
 endif( BUILD_DOCUMENTATION )
 
+if (NOT Module_PoissonReconstruction)
+  set(Poisson_TARGET_FILE ${PoissonReconstruction_BINARY_DIR}/PoissonReconstructionTargets.cmake)
+  get_property(PoissonReconstruction_TARGETS GLOBAL PROPERTY PoissonReconstruction_TARGETS)
+  export(TARGETS ${PoissonReconstruction_TARGETS} APPEND FILE ${Poisson_TARGET_FILE})
+  configure_file(
+    ${PoissonReconstruction_SOURCE_DIR}/CMake/PoissonReconstructionConfig.cmake.in
+    ${PoissonReconstruction_BINARY_DIR}/PoissonReconstructionConfig.cmake
+    @ONLY)
+endif()

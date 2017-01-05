@@ -17,3 +17,10 @@ add_library( vtkPoissonReconstruction
 target_link_libraries( vtkPoissonReconstruction
   ${VTK_LIBRARIES}
 )
+
+install(TARGETS vtkPoissonReconstruction
+  RUNTIME DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY} COMPONENT RuntimeLibraries
+  LIBRARY DESTINATION ${CMAKE_LIBRARY_OUTPUT_DIRECTORY} COMPONENT RuntimeLibraries
+  ARCHIVE DESTINATION ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY} COMPONENT Development
+)
+set_property(GLOBAL APPEND PROPERTY PoissonReconstruction_TARGETS vtkPoissonReconstruction)

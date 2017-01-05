@@ -40,6 +40,8 @@ else()
     ${PoissonReconstruction_BINARY_DIR}/lib
     CACHE PATH "path for all libraries"
   )
+  find_package(VTK REQUIRED)
+  include(${VTK_USE_FILE})
 endif()
 
 if( ${VTK_BUILD_SHARED_LIBS} MATCHES ON )

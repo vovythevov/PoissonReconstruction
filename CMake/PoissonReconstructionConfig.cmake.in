@@ -1,4 +1,7 @@
-
+# --------------------------------------------------------------------------
+set(PoissonReconstruction_SOURCE_DIR "@PoissonReconstruction_SOURCE_DIR@")
+set(PoissonReconstruction_BINARY_DIR "@PoissonReconstruction_BINARY_DIR@")
+set(PoissonReconstruction_INCLUDE_DIRS "@PoissonReconstruction_INCLUDE_DIRS@")
 
 # --------------------------------------------------------------------------
 if(EXISTS "@Poisson_TARGET_FILE@" AND NOT TARGET vtkPoissonReconstruction)

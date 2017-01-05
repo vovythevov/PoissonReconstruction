@@ -52,11 +52,11 @@ else(${VTK_BUILD_SHARED_LIBS} MATCHES ON )
   set( SHARED_LIBS "STATIC" )
 endif(${VTK_BUILD_SHARED_LIBS} MATCHES ON )
 
-
-include_directories(
+list(APPEND PoissonReconstruction_INCLUDE_DIRS
   ${PoissonReconstruction_SOURCE_DIR}/source
   ${PoissonReconstruction_BINARY_DIR}
 )
+include_directories(${PoissonReconstruction_INCLUDE_DIRS})
 
 add_subdirectory(source)
 

@@ -3,6 +3,8 @@ set(PoissonReconstruction_SOURCE_DIR "@PoissonReconstruction_SOURCE_DIR@")
 set(PoissonReconstruction_BINARY_DIR "@PoissonReconstruction_BINARY_DIR@")
 set(PoissonReconstruction_INCLUDE_DIRS "@PoissonReconstruction_INCLUDE_DIRS@")
 
+set(PoissonReconstruction_CPACK_INSTALL_CMAKE_PROJECTS "${PoissonReconstruction_BINARY_DIR};PoissonReconstruction;RuntimeLibraries;/")
+
 # --------------------------------------------------------------------------
 if(EXISTS "@Poisson_TARGET_FILE@" AND NOT TARGET vtkPoissonReconstruction)
   include("@Poisson_TARGET_FILE@")
